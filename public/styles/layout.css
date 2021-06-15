@@ -18,7 +18,40 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
+
+.container  {
+  width: 90%;
+  margin: auto;
+  align-content: center;
+  background-color: #f4f1ec;
+  border-radius: 2px;
+  border-style: dotted;
+  border-color: red;
+}
+
+.mainH1 {
+  align-items: center;
+  border-radius: 2px;
+  border-style: dotted;
+  border-color: red;
+} 
+
+.mainH2 {
+  border-radius: 2px;
+  border-style: dotted;
+  border-color: red;
+}
+
+.mainP {
+  border-radius: 2px;
+  border-style: dotted;
+  border-color: red;
+}
+
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
