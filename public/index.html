@@ -43,16 +43,18 @@
       </div>
     </header>
     <!-- Page-specific (main) content here -->
+    <main>
       <div class="text-box">
         <form class="tweet-form" action="/tweets/" method="POST">
-          <textarea id="text-input" name="text" placeholder="What are you humming about?"></textarea>
+          <textarea id="text-input" name="text-input" placeholder="What are you humming about?"></textarea>
         </form>
       </div>
 
     <div class="submit-counter">
       <button id="submit" type="submit">Tweet</button>
-      <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
+      <output id="counter" name="counter" class="counter" for="text-input">140</output>
     </div>
+  </main>
     <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
   </body>
 </html>
