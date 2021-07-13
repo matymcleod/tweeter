@@ -22,7 +22,6 @@
 display: flex;
 margin-right: 2em;
 font-family: 'Bungee', cursive, sans-serif;
-
 }
 
 
@@ -44,11 +43,11 @@ font-family: 'Bungee', cursive, sans-serif;
   margin-top: 0.5em;
 }
 
-.tweetBox {
+/* .tweetBox {
   display: flex;
   justify-content: stretch;
   border-bottom: 1px solid #aaa;
-}
+} */
 
 .tweet-form {
   display: flex;
