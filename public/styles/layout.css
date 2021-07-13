@@ -1,9 +1,25 @@
+/* * * * CLASSES * * * */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+/* * * * ELEMENTS * * * */
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -20,39 +36,9 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
-.container  {
-  width: 90%;
-  margin: auto;
-  align-content: center;
-  background-color: #f4f1ec;
-  border-radius: 2px;
-  border-style: dotted;
-  border-color: red;
+header {
+  height: 40%;
+  background-color: teal;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+    
 }
-
-.mainH1 {
-  align-items: center;
-  border-radius: 2px;
-  border-style: dotted;
-  border-color: red;
-} 
-
-.mainH2 {
-  border-radius: 2px;
-  border-style: dotted;
-  border-color: red;
-}
-
-.mainP {
-  border-radius: 2px;
-  border-style: dotted;
-  border-color: red;
-}
-
-
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
