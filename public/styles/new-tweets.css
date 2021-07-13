@@ -1,0 +1,67 @@
+/* * * * ID's * * * */
+#text-input {
+  width: 90%;
+  height: 2em;
+  background-color: #f4f1ec;
+  border-bottom: black 1px;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+#submit {
+  margin-left: 2em;
+  font-family: 'Bungee', cursive, sans-serif;
+  background-color: #4056a1;
+  color: white;
+  border-radius: 5px;
+}
+
+#counter {
+display: flex;
+margin-right: 2em;
+font-family: 'Bungee', cursive, sans-serif;
+
+}
+
+
+/* * * * CLASSES * * * */
+.text-box {
+  display: flex;
+  justify-content: stretch;
+  margin-bottom: 1.5em;
+  background-color: #f4f1ec;
+}
+
+.submit-counter {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin-left: 2.5em;
+  margin-right: 2.5em;
+  margin-bottom: 2.5em;
+  margin-top: 0.5em;
+}
+
+.tweetBox {
+  display: flex;
+  justify-content: stretch;
+  border-bottom: 1px solid #aaa;
+}
+
+.tweet-form {
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 4;
+  justify-content: center;
+  border-bottom: black 1px;
+  
+}
+
+
+/* * * * ELEMENTS * * * */
+section {
+  display: flex;
+  justify-content: center;
+}
