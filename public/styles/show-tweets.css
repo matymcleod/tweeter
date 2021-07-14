@@ -1,0 +1,68 @@
+/* * * * ID's * * * */
+#tweetContainer.tweet:hover {
+  box-shadow: 10px 10px #AEB1CC;
+}
+
+#tweetContainer {
+  margin: 1.5em;
+  height: 200px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#tweetFooter {
+display: flex;
+margin: 5px;
+flex-direction: row;
+justify-content: space-between;
+}
+
+#icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 2em;
+}
+/* * * * CLASSES * * * */
+
+
+.fas {
+  color: #4056a1;
+  margin: 10px;
+  display: flex;
+}
+
+
+.tweet-header {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f4f1ec;
+}
+
+.show-tweets {
+  margin: 10px 10px 0px 10px;
+}
+
+.tweet-body {
+  border-bottom: solid;
+  border-width: 1px;
+}
+/* * * * ELEMENTS * * * */
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tweet-header img {
+  border-radius: 10px;
+  width: 10%;
+}

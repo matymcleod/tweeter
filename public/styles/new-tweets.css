@@ -43,11 +43,6 @@ font-family: 'Bungee', cursive, sans-serif;
   margin-top: 0.5em;
 }
 
-/* .tweetBox {
-  display: flex;
-  justify-content: stretch;
-  border-bottom: 1px solid #aaa;
-} */
 
 .tweet-form {
   display: flex;
@@ -58,9 +53,9 @@ font-family: 'Bungee', cursive, sans-serif;
   
 }
 
-
 /* * * * ELEMENTS * * * */
 section {
   display: flex;
   justify-content: center;
 }
+
