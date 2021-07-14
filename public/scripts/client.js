@@ -48,7 +48,14 @@ let $tweet = `<article> class="tweet">
 <div class="handle" name="handle">${data.user.name}</div>
 <div class="tweet-body">${data.content.text}</div>
 <div id="tweetFooter">
-`
+  <div id="tweet-date">x days ago</div>
+  <div id="icons">
+  <i class="fas fa-retweet"></i>
+  <i class="fas fa-flag"></i>
+  <i class="fas fa-heart"></i>
+</div>
+</article>
+`;
   return $tweet;
 }
 
