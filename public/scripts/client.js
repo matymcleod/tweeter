@@ -41,21 +41,28 @@ const renderTweets = function(tweets) {
   }
 };
 
-const createTweetElement = function(tweet) {
-let $tweet = `<article> class="tweet">
-<header class="tweet-header">
-<img class="avatar" src="${data.user.avatars.small}">
-<div class="handle" name="handle">${data.user.name}</div>
-<div class="tweet-body">${data.content.text}</div>
-<div id="tweetFooter">
-  <div id="tweet-date">x days ago</div>
-  <div id="icons">
-  <i class="fas fa-retweet"></i>
-  <i class="fas fa-flag"></i>
-  <i class="fas fa-heart"></i>
-</div>
-</article>
-`;
+const timeago = window.timeago
+console.log('timeago:', timeago);
+
+const createTweetElement = function(Data) {
+  const { content, created_at } = Data;
+  const { name, avatars, handle} = Data.user;
+  const daysAgo = timeago.format(created_at);
+  let $tweet = `<article> class="tweet">
+  <header class="tweet-header">
+  <img class="avatar" src="${data.user.avatars.small}">
+  <div class="handle" name="handle">${data.user.name}</div>
+  <div class="tweet-body">${data.content.text}</div>
+  <div id="tweetFooter">
+    <time class="datestamp">${moment(tweetData.created_at).fromNow()}</time>
+    <div id="tweet-date">x days ago</div>
+    <div id="icons">
+    <i class="fas fa-retweet"></i>
+    <i class="fas fa-flag"></i>
+    <i class="fas fa-heart"></i>
+  </div>
+  </article>
+  `;
   return $tweet;
 }
 
