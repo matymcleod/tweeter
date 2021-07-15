@@ -5,7 +5,7 @@
  */
 
 
-const data = [
+const tweetData = [
   {
     "user": {
       "name": "Newton",
@@ -26,13 +26,13 @@ const data = [
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1461113959088
+    "created_at": 1626382533953
   }
 ]
 
 const renderTweets = function(tweets) {
   // $('#tweetContainer').empty();
-  // let tweetsContainer = $('.tweets');
+  let tweetsContainer = $('#tweets-Container');
   // console.log('tweets:',tweets);
   // loops through tweets
   for (const tweet of tweets) {
@@ -50,20 +50,21 @@ const renderTweets = function(tweets) {
 const createTweetElement = function(Data) {
   const { content, created_at } = Data;
   const { name, avatars, handle} = Data.user;
-  // console.log('data.content.created_at:', Data.created_at);
-  // let newDate = new Date(Data.created_at * 1000)
+  console.log('data.content.created_at:', Data.created_at);
+  let newDate = new Date(Data.created_at * 1000)
   let newDate2 = Data.created_at;
   // console.log('timeago:', newDate.timeago);
   const daysAgo = timeago.format(newDate2);
-  console.log('daysago:', daysAgo);
+  // console.log('daysago:', daysAgo);
   console.log('Data:', Data);
   
-  let $tweet = `<div id="tweets-Container" class="tweet">
+  let $tweet = `<div class="tweet">
   <section class="show-tweets">
-  <header class="tweet-header">
+  <div class="tweet-head">
   <div id="avatar-user">
   <img class="avatar" src="${Data.user.avatars}">
   <div class="username" name="name">${Data.user.name}</div>
+  </div>
   <div class="handle" name="handle">${Data.user.handle}</div>
   </div>
   </section>
@@ -88,10 +89,4 @@ const createTweetElement = function(Data) {
   return $tweet;
 }
 
-renderTweets(data);
-
-const $tweet = createTweetElement(data);
-
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweetContainer').append($tweet);
+renderTweets(tweetData);
