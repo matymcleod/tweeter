@@ -45,43 +45,61 @@
       </div>
     </header>
     <!-- Page-specific (main) content here -->
+    
+    
     <main>
+<!-- INPUT AND SUBMIT -->
       <div class="text-box">
         <form class="tweet-form" action="/tweets/" method="POST">
-          <textarea id="text-input" name="text-input" placeholder="What are you humming about?"></textarea>
+          <textarea id="text-input" name="text" placeholder="What are you humming about?"></textarea>
+          <div class="submit-counter">
+            <button id="submit" type="submit">Tweet</button>
+            <output id="counter" name="counter" class="counter" for="text-input">140</output>
+          </div>
         </form>
       </div>
-    <div class="submit-counter">
-      <button id="submit" type="submit">Tweet</button>
-      <output id="counter" name="counter" class="counter" for="text-input">140</output>
-    </div>
 
-    <div id="tweetContainer" class="tweet">
-      
-      <section class="show-tweets">
-        <div class="tweet-header">
-          <img class="avatar" src="/images/profile-hex.png">
-          <div class="name" name="name">Name</div>
-          <div class="handle" name="handle">Handle</div>
+
+<!-- TWEETS-CONTAINER -->
+      <div id="tweets-Container" class="tweet">
+        <section class="show-tweets">
+          
+<!-- TWEET HEADER -->
+          <div class="tweet-header">
+            <div id="avatar-user">
+              <img class="avatar" src="/images/profile-hex.png">
+              <div class="username" name="name">Username
+            </div>
+            </div>
+            <div class="handle" name="handle">Handle
+            </div>
+          </div>
+        </section>
+
+<!-- BODY CONTAINER -->
+        <div id="body-container">
+          <div class="tweet-body">tweet-body
+          </div>
         </div>
-        <div class="tweet-body">This is a tweet</div>
-      </section>
 
-      <div id="tweetFooter">
-        <div id="tweet-date">x days ago</div>
-        <div id="icons">
-        <i class="fas fa-retweet"></i>
-        <i class="fas fa-flag"></i>
-        <i class="fas fa-heart"></i>
-      </div>
-      </div> 
-    </div>
-
-
+<!-- FOOTER CONTAINER -->
+        <div id="footer-container">
+          <div id="tweetFooter">
+            <div id="tweet-date">x days ago</div>
+            <div id="icons">
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+        </div>
+<!-- TWEETS-CONTAINER END -->
+    </div> 
   </main>
 
-    <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="scripts/client.js"></script>
+<!-- SCRIPTS -->
+    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="./scripts/client.js"></script>
   </body>
 </html>
 

@@ -31,64 +31,67 @@ const data = [
 ]
 
 const renderTweets = function(tweets) {
-  $('#tweetContainer').empty();
+  // $('#tweetContainer').empty();
+  // let tweetsContainer = $('.tweets');
+  // console.log('tweets:',tweets);
   // loops through tweets
   for (const tweet of tweets) {
     // calls createTweetElement for each tweet
-    const $tweet = createTweet(tweet);
+    let tweetElement = createTweetElement(tweet);
     // takes return value and appends it to the tweets container
-    $('#tweetContainer').prepend($tweet);
+    // $('#tweetContainer').prepend($tweet);
+    tweetsContainer.append(tweetElement);
   }
 };
 
-const createTweetElement = function(tweet) {
-let $tweet = `<article> class="tweet">
-<header class="tweet-header">
-<img class="avatar" src="${data.user.avatars.small}">
-<div class="handle" name="handle">${data.user.name}</div>
-<div class="tweet-body">${data.content.text}</div>
-<div id="tweetFooter">
-`
+// const timeago = window.timeago
+// console.log('timeago:', timeago);
+
+const createTweetElement = function(Data) {
+  const { content, created_at } = Data;
+  const { name, avatars, handle} = Data.user;
+  // console.log('data.content.created_at:', Data.created_at);
+  // let newDate = new Date(Data.created_at * 1000)
+  let newDate2 = Data.created_at;
+  // console.log('timeago:', newDate.timeago);
+  const daysAgo = timeago.format(newDate2);
+  console.log('daysago:', daysAgo);
+  console.log('Data:', Data);
+  
+  let $tweet = `<div id="tweets-Container" class="tweet">
+  <section class="show-tweets">
+  <header class="tweet-header">
+  <div id="avatar-user">
+  <img class="avatar" src="${Data.user.avatars}">
+  <div class="username" name="name">${Data.user.name}</div>
+  <div class="handle" name="handle">${Data.user.handle}</div>
+  </div>
+  </section>
+
+  <div id="body-container">
+  <div class="tweet-body">${Data.content.text}</div>
+  </div>
+
+  <div id="footer-container">
+  <div id="tweetFooter">
+  <div id="tweet-date">${(daysAgo)}</div>
+  <div id="icons">
+    <i class="fas fa-retweet"></i>
+    <i class="fas fa-flag"></i>
+    <i class="fas fa-heart"></i>
+  </div>
+  </div>
+  </div>
+  </div> 
+  </main>
+  `;
   return $tweet;
 }
 
 renderTweets(data);
 
+const $tweet = createTweetElement(data);
 
-
-
-
-
-
-
-
-
-// const createPost = (post) => {
-//   const $title = $('<h3>').text(`Title: ${post.title} (${postMessage.id})`);
-//   const $body = $('<h4>').text(`Body: ${post.body}`);
-//   const $author = $('<h5>').text(`Author: ${post.userId}`);
-//   const $post = $('<div>').addClass('post');
-// }
-//   $post.apend($title);
-//   $post.append($body);
-
-//   $post.append($title).append($body);
-
-//   $post.append($title, $body, $author);
-
-
-//   const renderPosts = (posts => {
-//     for (const post of posts) {
-
-//   }
-// })
-
-
-// const $form = $('#new-post');
-
-// $form.on('submit', function () {
-//   const urlEncodedData = $(this).serialize();
-//   preventDefault
-//   console.log('urlEncodedData:', urlEncodedData);
-// });
-
+// Test / driver code (temporary)
+console.log($tweet); // to see what it looks like
+$('#tweetContainer').append($tweet);
