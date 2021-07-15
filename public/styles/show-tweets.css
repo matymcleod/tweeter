@@ -58,7 +58,19 @@
   margin: 10px;
   display: flex;
 }
+.fa-retweet:hover {
+  color: orange;
+}
 
+.fa-flag:hover {
+  color: orange;
+  
+}
+
+.fa-heart:hover {
+  color: orange;
+
+}
 
 .tweet-header {
   width: 90%;
