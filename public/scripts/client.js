@@ -31,13 +31,16 @@ const data = [
 ]
 
 const renderTweets = function(tweets) {
-  $('#tweetContainer').empty();
+  // $('#tweetContainer').empty();
+  let tweetsContainer = $('.tweet')
+  console.log('tweets:',tweets);
   // loops through tweets
   for (const tweet of tweets) {
     // calls createTweetElement for each tweet
-    const $tweet = createTweet(tweet);
+    let tweetElement = createTweetElement(tweet);
     // takes return value and appends it to the tweets container
-    $('#tweetContainer').prepend($tweet);
+    // $('#tweetContainer').prepend($tweet);
+    tweetsContainer.append(tweetElement)
   }
 };
 
@@ -47,15 +50,21 @@ console.log('timeago:', timeago);
 const createTweetElement = function(Data) {
   const { content, created_at } = Data;
   const { name, avatars, handle} = Data.user;
-  const daysAgo = timeago.format(created_at);
-  let $tweet = `<article> class="tweet">
+  // console.log('data.content.created_at:', Data.created_at);
+  // let newDate = new Date(Data.created_at * 1000)
+  let newDate2 = Data.created_at;
+  // console.log('timeago:', newDate.timeago);
+  const daysAgo = timeago.format(newDate2);
+  console.log('daysago:', daysAgo);
+  console.log('Data:', Data);
+  let $tweet = `<article class="tweet">
   <header class="tweet-header">
-  <img class="avatar" src="${data.user.avatars.small}">
-  <div class="handle" name="handle">${data.user.name}</div>
-  <div class="tweet-body">${data.content.text}</div>
+  <img class="avatar" src="${Data.user.avatars}">
+  <div class="handle" name="handle">${Data.user.name}</div>
+  <div class="tweet-body">${Data.content.text}</div>
   <div id="tweetFooter">
-    <time class="datestamp">${moment(tweetData.created_at).fromNow()}</time>
-    <div id="tweet-date">x days ago</div>
+    <time class="datestamp">${(daysAgo)}</time>
+    <div id="tweet-date"></div>
     <div id="icons">
     <i class="fas fa-retweet"></i>
     <i class="fas fa-flag"></i>
@@ -68,7 +77,11 @@ const createTweetElement = function(Data) {
 
 renderTweets(data);
 
+// const $tweet = createTweetElement(data);
 
+// // Test / driver code (temporary)
+// console.log($tweet); // to see what it looks like
+// $('#tweetContainer').append($tweet);
 
 
 
