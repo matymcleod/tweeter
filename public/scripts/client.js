@@ -32,7 +32,7 @@ const data = [
 
 const renderTweets = function(tweets) {
   // $('#tweetContainer').empty();
-  let tweetsContainer = $('.tweet')
+  let tweetContainer = $('.tweets')
   console.log('tweets:',tweets);
   // loops through tweets
   for (const tweet of tweets) {
@@ -40,12 +40,12 @@ const renderTweets = function(tweets) {
     let tweetElement = createTweetElement(tweet);
     // takes return value and appends it to the tweets container
     // $('#tweetContainer').prepend($tweet);
-    tweetsContainer.append(tweetElement)
+    tweetContainer.append(tweetElement)
   }
 };
 
-const timeago = window.timeago
-console.log('timeago:', timeago);
+// const timeago = window.timeago
+// console.log('timeago:', timeago);
 
 const createTweetElement = function(Data) {
   const { content, created_at } = Data;

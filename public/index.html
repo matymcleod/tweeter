@@ -48,6 +48,7 @@
     
     
     <main>
+<!-- INPUT AND SUBMIT -->
       <div class="text-box">
         <form class="tweet-form" action="/tweets/" method="POST">
           <textarea id="text-input" name="text" placeholder="What are you humming about?"></textarea>
@@ -57,9 +58,13 @@
           </div>
         </form>
       </div>
-      
-      <div id="tweetContainer" class="tweet">
+
+
+<!-- TWEETS-CONTAINER -->
+      <div id="tweets-Container" class="tweet">
         <section class="show-tweets">
+          
+<!-- TWEET HEADER -->
           <div class="tweet-header">
             <div id="avatar-user">
               <img class="avatar" src="/images/profile-hex.png">
@@ -70,11 +75,14 @@
             </div>
           </div>
         </section>
+
+<!-- BODY CONTAINER -->
         <div id="body-container">
           <div class="tweet-body">tweet-body
           </div>
         </div>
-        
+
+<!-- FOOTER CONTAINER -->
         <div id="footer-container">
           <div id="tweetFooter">
             <div id="tweet-date">x days ago</div>
@@ -85,12 +93,11 @@
             </div>
           </div>
         </div>
+<!-- TWEETS-CONTAINER END -->
     </div> 
-
-
-
   </main>
 
+<!-- SCRIPTS -->
     <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="./scripts/client.js"></script>
   </body>

@@ -1,9 +1,9 @@
 /* * * * ID's * * * */
-#tweetContainer.tweet:hover {
+#tweets-Container.tweet:hover {
   box-shadow: 10px 10px #AEB1CC;
 }
 
-#tweetContainer {
+#tweets-Container {
   margin: 1.5em;
   height: auto;
   border-style: solid;
@@ -22,8 +22,9 @@
   justify-content: flex-end;
   height: 2em;
 }
+
 #avatar {
-  height: 50%
+  /* height: 50% */
 }
 
 #avatar-user {
