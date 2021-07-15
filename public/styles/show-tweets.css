@@ -15,18 +15,39 @@
   justify-content: space-between;
 }
 
-#tweetFooter {
-display: flex;
-margin: 5px;
-flex-direction: row;
-justify-content: space-between;
-}
 
 #icons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   height: 2em;
+}
+#avatar {
+  height: 50%
+}
+
+#avatar-user {
+  display: flex;
+  flex-direction: row;
+}
+
+#body-container {
+  display: flex;
+  justify-content: center;
+}
+
+#footer-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#tweetFooter {
+  display: flex;
+  width: 90%;
+  margin: 0%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* * * * CLASSES * * * */
 
@@ -39,20 +60,30 @@ justify-content: space-between;
 
 
 .tweet-header {
-  display: flex;
   width: 90%;
-  flex-direction: column;
-  justify-content: center;
+  margin: 2% 0% 2% 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #f4f1ec;
 }
 
 .show-tweets {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin: 10px 10px 0px 10px;
 }
 
 .tweet-body {
+  width: 90%;
+  justify-content: center;
   border-bottom: solid;
   border-width: 1px;
+}
+
+.username {
+  margin-left: 10%;
 }
 /* * * * ELEMENTS * * * */
 
