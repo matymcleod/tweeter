@@ -18,10 +18,12 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 /* * * * ELEMENTS * * * */
  html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -36,9 +38,9 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
 header {
   height: 40%;
   background-color: teal;
   background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
-    
 }
