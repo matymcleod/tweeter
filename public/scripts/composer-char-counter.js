@@ -1,9 +1,8 @@
-$(document).ready(function() {
-  console.log('We are connected to the js file and ready to use jQuery');
-});
+$(document).ready(function() {});
 
 let counter = $('#counter');
 
+// CHARACTER COUNTER CONFIG
 $('#text-input').on('input', function() {
   let currentLength = $(this).val().length;
   counter.val(140 - currentLength);
