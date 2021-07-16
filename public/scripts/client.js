@@ -1,3 +1,33 @@
+$(document).ready(() => {
+  $("form").on("submit", onSubmit);
+});
+
+console.log('jQuery is ready!');
+
+const onSubmit = function (event) {
+  event.preventDefault();
+  
+  const data = $(this).serialize();
+  $.post('/tweets', data);
+
+  console.log("the request has been made to the server");
+};
+
+const loadTweets = () => {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    success: (tweets) => {
+      console.log(tweets);
+      renderTweets(tweets);
+    },
+    error: (err) => {
+      console.error(err);
+    }
+  });
+};
+
+// $.ajax
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -31,33 +61,22 @@ const tweetData = [
 ]
 
 const renderTweets = function(tweets) {
-  // $('#tweetContainer').empty();
+  $('#tweets-Container').empty();
   let tweetsContainer = $('#tweets-Container');
-  // console.log('tweets:',tweets);
   // loops through tweets
   for (const tweet of tweets) {
-    // calls createTweetElement for each tweet
     let tweetElement = createTweetElement(tweet);
-    // takes return value and appends it to the tweets container
-    // $('#tweetContainer').prepend($tweet);
     tweetsContainer.append(tweetElement);
   }
 };
 
-// const timeago = window.timeago
-// console.log('timeago:', timeago);
 
 const createTweetElement = function(Data) {
   const { content, created_at } = Data;
   const { name, avatars, handle} = Data.user;
-  console.log('data.content.created_at:', Data.created_at);
   let newDate = new Date(Data.created_at * 1000)
   let newDate2 = Data.created_at;
-  // console.log('timeago:', newDate.timeago);
   const daysAgo = timeago.format(newDate2);
-  // console.log('daysago:', daysAgo);
-  console.log('Data:', Data);
-  
   let $tweet = `<div class="tweet">
   <section class="show-tweets">
   <div class="tweet-head">
