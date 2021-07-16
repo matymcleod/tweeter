@@ -7,11 +7,34 @@ console.log('jQuery is ready!');
 const onSubmit = function (event) {
   event.preventDefault();
   
+  const $error = $("div.error-message");
+  const tweetChars = $("#text-input").val();
+ 
+  if (tweetChars === null || tweetChars.length === 0) {
+    alert(`Cannot submit an empty tweet!`);
+    return;
+  }
+
+  if (tweetChars.length > 140) {
+    alert(`Character limit exceded!`);
+    return;
+  }
+
+
+  $error.slideUp();
+
   const data = $(this).serialize();
-  $.post('/tweets', data);
+
+  $.post('/tweets', data)
+      .then(() => {
+        $("#text-input").val("");
+        $("#counter").html("140");
+        loadTweets();
+      });
 
   console.log("the request has been made to the server");
 };
+
 
 const loadTweets = () => {
   $.ajax({
@@ -19,6 +42,7 @@ const loadTweets = () => {
     method: 'GET',
     success: (tweets) => {
       console.log(tweets);
+      console.log(createTweetElement(tweets[0]));
       renderTweets(tweets);
     },
     error: (err) => {
@@ -27,12 +51,9 @@ const loadTweets = () => {
   });
 };
 
-// $.ajax
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+loadTweets();
+
+
 
 
 const tweetData = [
@@ -66,7 +87,7 @@ const renderTweets = function(tweets) {
   // loops through tweets
   for (const tweet of tweets) {
     let tweetElement = createTweetElement(tweet);
-    tweetsContainer.append(tweetElement);
+    tweetsContainer.prepend(tweetElement);
   }
 };
 
