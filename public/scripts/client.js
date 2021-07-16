@@ -2,23 +2,22 @@ $(document).ready(() => {
   $("form").on("submit", onSubmit);
 });
 
+// SETS UP SERVER ACTIONS BASED ON USER INPUT
 const onSubmit = function (event) {
   event.preventDefault();
   
-  const $error = $("div.error-message");
   const tweetChars = $("#text-input").val();
  
+  // ALERTS IF NO INPUT IS ENTERED INTO TWEET FORM
   if (tweetChars === null || tweetChars.length === 0) {
     alert(`Cannot submit an empty tweet!`);
     return;
   }
-
+// ALERTS IF MORE THAN 140 ARE ENTERED INTO THE TEXT AREA
   if (tweetChars.length > 140) {
     alert(`Character limit exceded!`);
     return;
   }
-
-  $error.slideUp();
 
   const data = $(this).serialize();
 
@@ -28,17 +27,14 @@ const onSubmit = function (event) {
         $("#counter").html("140");
         loadTweets();
       });
-
-  console.log("the request has been made to the server");
 };
 
+// GET REQUEST TO SERVER FOR TWEETS IN MEMORY
 const loadTweets = () => {
   $.ajax({
     url: '/tweets',
     method: 'GET',
     success: (tweets) => {
-      console.log(tweets);
-      console.log(createTweetElement(tweets[0]));
       renderTweets(tweets);
     },
     error: (err) => {
@@ -47,36 +43,13 @@ const loadTweets = () => {
   });
 };
 
+// CALLS LOAD TWEETS FUNCTION
 loadTweets();
 
+// TWEETS DATABASE
+const tweetData = [];
 
-
-
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1626382533953
-  }
-]
-
+// RENDERS TWEETS FROM DATABASE
 const renderTweets = function(tweets) {
   $('#tweets-Container').empty();
   let tweetsContainer = $('#tweets-Container');
@@ -87,11 +60,8 @@ const renderTweets = function(tweets) {
   }
 };
 
-
+// SETS UP TWEETS TO BE SENT TO SERVER
 const createTweetElement = function(Data) {
-  const { content, created_at } = Data;
-  const { name, avatars, handle} = Data.user;
-  let newDate = new Date(Data.created_at * 1000)
   let newDate2 = Data.created_at;
   const daysAgo = timeago.format(newDate2);
   let $tweet = `<div class="tweet">
@@ -104,11 +74,9 @@ const createTweetElement = function(Data) {
   <div class="handle" name="handle">${Data.user.handle}</div>
   </div>
   </section>
-
   <div id="body-container">
   <div class="tweet-body">${Data.content.text}</div>
   </div>
-
   <div id="footer-container">
   <div id="tweetFooter">
   <div id="tweet-date">${(daysAgo)}</div>
@@ -124,5 +92,5 @@ const createTweetElement = function(Data) {
   `;
   return $tweet;
 }
-
+// CALLS RENDER TWEETS FUNCTION AND PASSES IN TWEET DATA
 renderTweets(tweetData);
