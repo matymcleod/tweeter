@@ -25,7 +25,6 @@ display: flex;
 font-family: 'Bungee', cursive, sans-serif;
 }
 
-
 /* * * * CLASSES * * * */
 .text-box {
   display: flex;
@@ -44,7 +43,6 @@ font-family: 'Bungee', cursive, sans-serif;
   margin-top: 0.5em;
 }
 
-
 .tweet-form {
   display: flex;
   justify-content: center;
@@ -53,7 +51,6 @@ font-family: 'Bungee', cursive, sans-serif;
   /* flex-basis: auto; */
   /* flex-grow: 4; */
   border-bottom: black 1px;
-  
 }
 
 /* * * * ELEMENTS * * * */
