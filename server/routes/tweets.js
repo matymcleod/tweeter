@@ -16,12 +16,13 @@ module.exports = function(DataHelpers) {
     });
   });
 
+  // END POINT FOR TWEET POST REQUESTS
   tweetsRoutes.post("/", function(req, res) {
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     };
-
+// GENERATES RANDOM USER INFO AND DATE SET
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
       user: user,
