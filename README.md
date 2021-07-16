@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+# Final Product
+
+!["Startup page"](https://github.com/matymcleod/tweeter/blob/7c4d1a23610f1a664e1c3857e47bac5fdb32808c/docs/Front%20page.png?raw=true)
+!["Tweet submission area"](https://github.com/matymcleod/tweeter/blob/7c4d1a23610f1a664e1c3857e47bac5fdb32808c/docs/Tweet%20post%20area.png?raw=true)
