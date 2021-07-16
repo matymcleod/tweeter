@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
+
+<!-- META INFO -->
     <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
+<!-- EXTERNAL CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />>
-    <!-- App CSS -->
+
+<!-- APP CSS -->
     <link rel="stylesheet" href="styles/layout.css" type="text/css">
     <link rel="stylesheet" href="styles/nav.css" type="text/css">
     <link rel="stylesheet" href="styles/new-tweets.css" type="text/css">
     <link rel="stylesheet" href="styles/show-tweets.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://www.transparenttextures.com/patterns/black-thread-light.png" />
-    <!-- External JS -->
+
+<!-- EXTERNAL JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <!-- <script type="text/javascript" src="scripts/client.js"></script> -->
+<!-- APP JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="./scripts/client.js"></script>
   </head>
-
   <body>
-    <!-- Top nav bar (fixed) -->
+
+<!-- TOP OF NAV BAR (FIXED) -->
     <nav>
       <div class="headerText">
         <span>tweeter</span>
@@ -44,30 +48,23 @@
         <p class="name"><strong>Mathew</strong> McLeod</p>
       </div>
     </header>
-    <!-- Page-specific (main) content here -->
-    
-    
     <main>
+
 <!-- INPUT AND SUBMIT -->
-      <div class="text-box">
-        <form class="tweet-form" action="/tweets/" method="POST">
-          <textarea id="text-input" name="text" placeholder="What are you humming about?"></textarea>
-          <div class="submit-counter">
-            <button id="submit" type="submit">Tweet</button>
-            <output id="counter" name="counter" class="counter" for="text-input">140</output>
-          </div>
-        </form>
-      </div>
+        <div class="text-box">
+          <form class="tweet-form" action="/tweets/" method="POST">
+            <textarea id="text-input" name="text" placeholder="What are you humming about?"></textarea>
+            <div class="submit-counter">
+              <button id="submit" type="submit">Tweet</button>
+              <output id="counter" name="counter" class="counter" for="text-input">140</output>
+            </div>
+          </form>
+        </div>
 
-
-<!-- TWEETS-CONTAINER -->
-      <div id="tweets-Container">
-    </div> 
-  </main>
-
-<!-- SCRIPTS -->
-    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="./scripts/client.js"></script>
+  <!-- TWEETS-CONTAINER -->
+        <div id="tweets-Container">
+      </div> 
+    </main>
   </body>
 </html>
 

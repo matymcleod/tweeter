@@ -2,8 +2,6 @@ $(document).ready(() => {
   $("form").on("submit", onSubmit);
 });
 
-console.log('jQuery is ready!');
-
 const onSubmit = function (event) {
   event.preventDefault();
   
@@ -20,7 +18,6 @@ const onSubmit = function (event) {
     return;
   }
 
-
   $error.slideUp();
 
   const data = $(this).serialize();
@@ -34,7 +31,6 @@ const onSubmit = function (event) {
 
   console.log("the request has been made to the server");
 };
-
 
 const loadTweets = () => {
   $.ajax({
