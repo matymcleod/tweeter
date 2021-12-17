@@ -3,7 +3,9 @@
   display: block;
   width: 100%;
   height: 2em;
-  background-color: #f4f1ec;
+  background-color: #ccfdff;
+background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   border-bottom: black 1px;
   border-style: solid;
   border-top: none;
@@ -30,7 +32,9 @@ font-family: 'Bungee', cursive, sans-serif;
   display: flex;
   justify-content: center;
   margin-bottom: 1.5em;
-  background-color: #f4f1ec;
+  background-color: #ccfdff;
+background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .submit-counter {

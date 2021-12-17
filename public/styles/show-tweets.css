@@ -80,7 +80,9 @@ margin: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #f4f1ec;
+  background-color: #ccfdff;
+background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .show-tweets {
