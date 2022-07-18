@@ -42,7 +42,10 @@ background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.
 }
 
 header {
-  height: 40%;
+  margin: auto;
+  height: 50%;
+  width: 95%;
+  border-radius: 2em;
   background-color: teal;
   background-color: #d6ab00;
 background-image: url(http://www.transparenttextures.com/patterns/foggy-birds.png);

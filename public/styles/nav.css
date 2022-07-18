@@ -9,6 +9,9 @@
 
 .headerText {
   font-family: Brush Script MT, Brush Script Std, cursive;
+  height: 80%;
+  margin: auto;
+  width: 95%;
 }
 
 .nav-right {
@@ -24,7 +27,7 @@
 
 /* * * * ELEMENTS * * * */
 nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
